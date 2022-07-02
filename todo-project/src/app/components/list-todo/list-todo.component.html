@@ -1,0 +1,14 @@
+<br>
+<br>
+<div *ngFor="let todo of todos" class = "responseContainer" id = "responseContainer">
+
+  <button type="button" class="collapsible"><input type = "checkbox" [checked]="todo.status">{{todo.item}}</button>
+  <div class="content">
+    <label>Description: </label> <span>{{todo.description}}</span><br>
+    <label>Due Date: </label> <span>{{todo.dueDate}}</span>
+    &nbsp; &nbsp; &nbsp; &nbsp;
+    <label>ID: </label><span>{{todo._id}}</span><br>
+
+  </div>
+
+</div>
