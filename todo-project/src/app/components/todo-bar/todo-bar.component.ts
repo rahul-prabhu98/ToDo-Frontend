@@ -25,6 +25,9 @@ export class TodoBarComponent implements OnInit {
       (data : Todo) =>{
         console.log(data);
         this.listTodo.addTodo(data);
+        this.todo.item = "";
+        this.todo.dueDate = "";
+        this.todo.description = "";
 
       },
       error => {
