@@ -8,6 +8,7 @@ import { Todo } from '../todo';
 export class TodoService {
   private baseUri: string = "http://localhost:3000";
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
+  private todo:Todo;
 
   constructor(private http: HttpClient) { }
 
@@ -21,10 +22,19 @@ export class TodoService {
 
   updateTodo(todo: Todo, id: string){
     return this.http.put(this.baseUri + '/todo/' + id,todo,{headers: this.headers});
+
   }
 
   deleteTodo(id: string){
     return this.http.delete(this.baseUri + '/todo/' +  id ,{headers: this.headers});
+  }
+
+  setter(todo:Todo){
+    this.todo = todo;
+  }
+
+  getter(){
+    return this.todo;
   }
 
 }

@@ -1,26 +1,26 @@
 <div class="todobar">
-  <form>
+  <form (ngSubmit)="createTodo()"  ngNativeValidate>
 
 
-      <input type = "hidden" name = "_id">
+      <input type = "hidden" name = "_id" [(ngModel)]="todo.id">
       &nbsp;&nbsp;&nbsp;&nbsp;
 
 
       <label for = "item">Title:  </label>
-      <input type = "text" name = "item" class = "input-bar">
+      <input type = "text" name = "item" required class = "input-bar" [(ngModel)] = "todo.item" id="item" >
       &nbsp;&nbsp;&nbsp;&nbsp;
 
 
       <label for = "desc">Description:  </label>
-      <input type = "text" name = "desc" size = "50" class = "input-bar">
+      <input type = "text" name = "desc" size = "50" class = "input-bar" [(ngModel)]="todo.description" id="desc">
       &nbsp;&nbsp;&nbsp;&nbsp;
 
 
       <label for = "dueDate">Due Date:  </label>
-      <input type = "datetime-local" name = "dueDate" class = "input-bar">
+      <input type = "datetime-local" name = "dueDate" class = "input-bar" [(ngModel)]="todo.dueDate"  id="dueDate">
       &nbsp;&nbsp;&nbsp;&nbsp;
 
-      <button class="todo-bar-button">Save</button>
+      <button type = "submit" class="todo-bar-button">Save</button>
 
   </form>
 </div>

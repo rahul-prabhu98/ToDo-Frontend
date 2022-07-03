@@ -1,14 +1,21 @@
+<app-todo-bar></app-todo-bar>
 <br>
 <br>
-<div *ngFor="let todo of todos" class = "responseContainer" id = "responseContainer">
+<div *ngFor="let todo of todos" class = "responseContainer" id = "responseContainer" (click) = "divFn($event)">
 
-  <button type="button" class="collapsible"><input type = "checkbox" [checked]="todo.status">{{todo.item}}</button>
+  <button type="button" class="collapsible" id="btnDiv"><label class="container">{{todo.item}}<input type = "checkbox" [checked]="todo.status"  [(ngModel)]="todo.status"  (change)="checkTodo(todo)"><span class="checkmark"></span></label>
+  </button>
   <div class="content">
+    <div class = "internalDiv">
     <label>Description: </label> <span>{{todo.description}}</span><br>
     <label>Due Date: </label> <span>{{todo.dueDate}}</span>
     &nbsp; &nbsp; &nbsp; &nbsp;
     <label>ID: </label><span>{{todo._id}}</span><br>
-
+    </div>
+    <div class = "internalDiv rightDiv">
+    <button type = "button" (click) = "doDelete(todo)" class = "btn btnDelete">Delete</button>
+    <button type = "button" (click) = "doUpdate(todo)" class = "btn">Update</button>
+    </div>
   </div>
-
+  <br><br>
 </div>

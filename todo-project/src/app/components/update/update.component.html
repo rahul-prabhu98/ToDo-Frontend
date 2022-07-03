@@ -1,0 +1,34 @@
+<div class = 'todobar'>
+  &nbsp; &nbsp;
+</div>
+<div class = "updateContainer">
+  <form (ngSubmit)="updateTodo()" >
+
+
+    <input type = "hidden" name = "_id" [(ngModel)]="todo.id">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <br>
+
+    <label for = "item">Title:  </label>
+    <input type = "text" name = "item" size="34" class = "input-bar inputUpdate" [(ngModel)] = "todo.item" id="item">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <br>
+
+    <label for = "desc">Description:  </label>
+    <input type = "text" name = "desc" size="27" class = "input-bar inputUpdate" [(ngModel)]="todo.description" id="desc">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <br>
+
+    <label for = "dueDate">Due Date:  </label>
+    <input type = "datetime-local" name = "dueDate" class = "input-bar inputUpdate" [(ngModel)]="todo.dueDate"  id="dueDate">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+    <br>
+    <button type = "submit" class="todo-bar-button">Update</button>
+
+  </form>
+</div>
+
