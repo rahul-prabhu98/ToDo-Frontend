@@ -3,6 +3,7 @@ import {Todo} from "../../todo";
 import {TodoService} from "../../service/todo.service";
 import {Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-update',
   templateUrl: './update.component.html',
@@ -15,6 +16,11 @@ export class UpdateComponent implements OnInit {
   ngOnInit() {
     this.todo = new Todo();
     this.todo = this.todoService.getter();
+    console.log(this.todo.dueDate);
+    let tempDate = new Date(this.todo.dueDate);
+    tempDate.setHours(tempDate.getHours()-5);
+    this.todo.dueDate =   new Date(tempDate).toISOString().slice(0,16);
+    console.log(this.todo.dueDate);
   }
 
   updateTodo(){

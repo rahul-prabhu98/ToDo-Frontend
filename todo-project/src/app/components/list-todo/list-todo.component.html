@@ -8,7 +8,7 @@
   <div class="content">
     <div class = "internalDiv">
     <label>Description: </label> <span>{{todo.description}}</span><br>
-    <label>Due Date: </label> <span>{{todo.dueDate}}</span>
+    <label>Due Date: </label> <span>{{todo.dueDate | date:'medium'}}</span>
     &nbsp; &nbsp; &nbsp; &nbsp;
     <label>ID: </label><span>{{todo._id}}</span><br>
     </div>

@@ -20,6 +20,7 @@ export class TodoBarComponent implements OnInit {
 
 
   createTodo(){
+    console.log(this.todo.dueDate);
     this.todoService.createTodo(this.todo).subscribe(
       (data : Todo) =>{
         console.log(data);
